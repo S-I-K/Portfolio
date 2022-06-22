@@ -70,15 +70,15 @@ section {
 	color: #fff;
 }
 
-/* header */
+/* HEADER */
 header{
 
 }
 
-/* main */
+/* MAIN */
 main {}
 main section {}
-/* main INTRO */
+/* intro */
 main .intro-box {
 	display: flex;
 	justify-content: center;
@@ -86,6 +86,11 @@ main .intro-box {
 	background-position: right;
 	background-size: cover;
 	background-attachment: fixed;
+}
+main .intro-box {
+	position: relative;
+	top: 0;
+	left: 0;
 }
 main .intro-box .container{
 	display: flex;
@@ -97,12 +102,12 @@ main .intro-box .intro-textbox{
 }
 main .intro-box .intro-textbox .intro-name{
 	font-family: 'Montserrat', sans-serif;
-	font-size: 2rem;
+	font-size: 2.2rem;
 	font-weight: 600;
 }
 main .intro-box .intro-textbox .intro-desc{
 	font-family: 'IBM Plex Sans KR', sans-serif;
-	font-size: .9rem;
+	font-size: 1.4rem;
 	font-weight: 300;
 	width: 100%;
 }
@@ -113,16 +118,123 @@ main .intro-box .intro-textbox .intro-tit img{
 	width: 100%;
 }
 
-main p:not(:last-child) {
-	padding: 1rem 0;
-	line-height: 1.4rem;
+main .intro-box .intro-textbox p:not(:last-child){
+	margin-left: 3rem;
+	line-height: 2.4rem;
 }
-main p:not(:last-child) {
-	margin: 0 3rem;
+
+/* intro star */
+.star {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 4px;
+	height: 4px;
+	background: #FFECBC;
+	border-radius: 50%;
+	box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+	0 0 0 8px rgba(255,255,255,0),
+	0 0 20px rgba(255,255,255,.6);
+	animation: animate 3s linear infinite;
 }
-/* main ABOUT */
+.star::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 300px;
+	height: 1px;
+	background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animate {
+	0% {
+		transform: rotate(315deg) translateX(0);
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(315deg) translateX(-1000px);
+		opacity: 0;
+	}
+}
+.star:nth-child(1) {
+	top: 0;
+	right: 0;
+	animation-delay: 0;
+	animation-duration: 1s;
+}
+.star:nth-child(2) {
+	top: 0;
+	right: 80px;
+	left: initial;
+	animation-delay: 0.2s;
+	animation-duration: 3s;
+}
+.star:nth-child(3) {
+	top: 80px;
+	right: 0px;
+	left: initial;
+	animation-delay: 0.4s;
+	animation-duration: 2s;
+}
+.star:nth-child(4) {
+	top: 0px;
+	right: 180px;
+	left: initial;
+	animation-delay: 0.6s;
+	animation-duration: 1.5s;
+}
+.star:nth-child(5) {
+	top: 0px;
+	right: 400px;
+	left: initial;
+	animation-delay: 0.8s;
+	animation-duration: 2.5s;
+}
+.star:nth-child(6) {
+	top: 0px;
+	right: 600px;
+	left: initial;
+	animation-delay: 1s;
+	animation-duration: 3s;
+}
+.star:nth-child(7) {
+	top: 300px;
+	right: 0px;
+	left: initial;
+	animation-delay: 1.2s;
+	animation-duration: 1.75s;
+}
+.star:nth-child(8) {
+	top: 0px;
+	right: 700px;
+	left: initial;
+	animation-delay: 1.4s;
+	animation-duration: 1.25s;
+}
+.star:nth-child(9) {
+	top: 0px;
+	right: 1000px;
+	left: initial;
+	animation-delay: 0.7s;
+	animation-duration: 2.25s;
+}
+.star:nth-child(10) {
+	top: 0px;
+	right: 450px;
+	left: initial;
+	animation-delay: 2.75s;
+	animation-duration: 2.25s;
+}
+
+
+
+/* about */
 main .about {
 }
+/* about title */
 main .about .about-tit{
 	display: flex;
 	justify-content: center;
@@ -138,8 +250,13 @@ main .about .about-tit .container img{
 	width: 200px;
 	border-radius: 50%;
 	margin: 0 3rem;
+	position: relative;
+	border: 8px solid #FFECBC;
 }
-main .about .about-tit .container .about-desc {}
+
+main .about .about-tit .container .about-desc {
+	// width: 60%;
+}
 main .about .about-tit .container .about-desc h4{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 2.4rem;
@@ -149,12 +266,42 @@ main .about .about-tit .container .about-desc h4{
 main .about .about-tit .container .about-desc h4 span{
 	color: #FFECBC;
 }
-main .about .about-tit .container .about-desc h4 p{
-	font-family: 'IBM Plex Sans KR', sans-serif;
+main .about .about-tit .container .about-desc p{
+	line-height: 30px;
+	font-size: 1rem;
+}
+/* about profile */
+main .about .about-profile {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background: #4E5689;
 }
 
-
-
+main .about .about-profile .container {
+	padding: 3rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+main .about .about-profile .container .profile-box{
+	display: flex;
+}
+main .about .about-profile .container .profile-box:not(:last-child){
+	margin-right: 8px;
+}
+main .about .about-profile .container .profile-box h4{
+	font-size: 2.4rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	margin-right: 30px;
+	color: #FFECBC;
+}
+main .about .about-profile .container .profile-box span{
+	font-size: 1.2rem;
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	line-height: 28px;
+}
 
 
 
@@ -165,5 +312,18 @@ main .about .about-tit .container .about-desc h4 p{
 @media (max-width: 1220px){
 	.container {
 		width: 100%;
+	}
+}
+/* 0 - 768px */
+@media (max-width: 800px){
+	main .about .about-profile .container {
+		flex-direction: column;
+		align-items: center;
+	}
+	main .about .about-profile .container .profile-box {
+		width: 400px;
+	}
+	main .about .about-profile .container .profile-box:not(:last-child) {
+		margin-bottom: 30px;
 	}
 }
