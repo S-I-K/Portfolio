@@ -60,6 +60,7 @@ section {
 	width: 100%;
 	height: 100vh;
 	background: #222;
+	color: #fff;
 }
 
 /* container */
@@ -104,6 +105,7 @@ main .intro-box .intro-textbox .intro-name{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 2.2rem;
 	font-weight: 600;
+	margin-bottom: 2rem;
 }
 main .intro-box .intro-textbox .intro-desc{
 	font-family: 'IBM Plex Sans KR', sans-serif;
@@ -119,7 +121,7 @@ main .intro-box .intro-textbox .intro-tit img{
 }
 
 main .intro-box .intro-textbox p:not(:last-child){
-	margin-left: 3rem;
+	// margin-left: 3rem;
 	line-height: 2.4rem;
 }
 
@@ -233,6 +235,7 @@ main .intro-box .intro-textbox p:not(:last-child){
 
 /* about */
 main .about {
+	height: auto;
 }
 /* about title */
 main .about .about-tit{
@@ -303,9 +306,52 @@ main .about .about-profile .container .profile-box span{
 	line-height: 28px;
 }
 
+/* about personality */
+main .about .about-personality {
+	width: 100%;
+	// height: 100vh;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	background: #efefef;
+}
+main .about .about-personality .container{
+	
+	padding: 40px 0;
+}
+main .about .about-personality .container .personality-icons{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+main .about .about-personality .container .personality-icons .personality-icon{
+	width: 25%;
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+main .about .about-personality .container .personality-icons .personality-icon img{
+	width: 100%;
+}
+main .about .about-personality .container .personality-icons .personality-icon h4 {
+	color: #FFECBC;
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin-bottom: 15px;
+	text-align: center;
+}
+main .about .about-personality .container .personality-icons .personality-icon p {
+	font-size: 1rem;
+	line-height: 24px;
+	text-align: center;
+	padding: 0 30px;
+}
 
-
-
+footer {
+}
 
 
 /* 0 - 1220px */
@@ -325,5 +371,9 @@ main .about .about-profile .container .profile-box span{
 	}
 	main .about .about-profile .container .profile-box:not(:last-child) {
 		margin-bottom: 30px;
+	}
+	
+	main .about .about-personality .container .personality-icons .personality-icon {
+		width: 50%;
 	}
 }
