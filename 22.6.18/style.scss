@@ -48,10 +48,48 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* Image replacement */
+.ir_so {
+    /* ir_screen out 약자로 임의 사용 */
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
 
-
-
-
+/* loading page */
+.loadBox {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: rgba(0,0,0,0.8);
+}
+.loader {
+	z-index: 1;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	border: 16px dashed #f3f3f3;
+	border-top: 16px dashed #3498db;
+	border-radius: 50%;
+	transform: translate(-50%,-50%);
+	animation: spin 2s linear infinite;
+}
+@keyframes spin {
+	0%{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+	100%{
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+}
 
 
 /* layout */
@@ -249,12 +287,57 @@ main .about .about-tit .container {
 	align-items: center;
 	padding: 3rem 0;
 }
+main .about .about-tit .container a {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+main .about .about-tit .container a .caption {
+	width: 140px;
+	padding: 10px;
+	border-radius: 8px;
+	background: #fff;
+	position: absolute;
+	top: 0px;
+	opacity: 0;
+	transition: all .6s ease-in-out;
+	font-size: 1rem;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 3;
+}
+main .about .about-tit .container a .caption::before {
+	content: '';
+	position: absolute;
+	bottom: -20%;
+	transform: rotate(-45deg);
+	border-top: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 12px solid #fff;
+	border-left: 12px solid #fff;
+	border-radius: 4px;
+}
+main .about .about-tit .container a:hover .caption {
+	top: -50px;
+	opacity: 1;
+}
 main .about .about-tit .container img{
 	width: 200px;
 	border-radius: 50%;
 	margin: 0 3rem;
 	position: relative;
-	border: 8px solid #FFECBC;
+	border: 8px solid transparent;
+	transition: all .4s ease-in-out;
+}
+main .about .about-tit .container img:hover {
+	border: 8px solid #ffecbc;
 }
 
 main .about .about-tit .container .about-desc {
@@ -270,6 +353,7 @@ main .about .about-tit .container .about-desc h4 span{
 	color: #FFECBC;
 }
 main .about .about-tit .container .about-desc p{
+	font-family: 'IBM Plex Sans KR', sans-serif;
 	line-height: 30px;
 	font-size: 1rem;
 }
@@ -316,7 +400,6 @@ main .about .about-personality {
 	background: #efefef;
 }
 main .about .about-personality .container{
-	
 	padding: 40px 0;
 }
 main .about .about-personality .container .personality-icons{
@@ -334,11 +417,11 @@ main .about .about-personality .container .personality-icons .personality-icon{
 	justify-content: flex-start;
 }
 main .about .about-personality .container .personality-icons .personality-icon img{
-	width: 100%;
+	width: 60%;
 }
 main .about .about-personality .container .personality-icons .personality-icon h4 {
 	color: #FFECBC;
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 	font-weight: 600;
 	margin-bottom: 15px;
 	text-align: center;
@@ -349,6 +432,82 @@ main .about .about-personality .container .personality-icons .personality-icon p
 	text-align: center;
 	padding: 0 30px;
 }
+
+/* about skills */
+main .about .about-skills {
+	display: flex;
+	justify-content: center;
+	background: #fff;
+	// height: 50vh;
+}
+main .about .about-skills .container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+main .about .about-skills .container .skills-box {
+	width: 18%;
+	border: 1px solid #999;
+	border-radius: 14px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1rem 1rem;
+	padding: 2rem 1rem;
+	position: relative;
+	// transition: box-shadow .2s;
+}
+main .about .about-skills .container .skills-box:hover {
+	box-shadow: 0px 0px 6px 0px;
+}
+main .about .about-skills .container .skills-box img {
+	width: 40%;
+	margin-bottom: 1rem;
+}
+main .about .about-skills .container .skills-box .rate-box {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+main .about .about-skills .container .skills-box .rate-box .rate {}
+main .about .about-skills .container .skills-box .rate-box .percent {}
+
+main .about .about-skills .container .skills-box .caption {
+	width: 140px;
+	padding: 10px;
+	border-radius: 8px;
+	background: #fff;
+	position: absolute;
+	top: 0px;
+	opacity: 0;
+	transition: all .6s ease-in-out;
+	font-size: 1rem;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 3;
+}
+main .about .about-skills .container .skills-box .caption::before {
+	content: '';
+	position: absolute;
+	bottom: -20%;
+	transform: rotate(-45deg);
+	border-top: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 12px solid #fff;
+	border-left: 12px solid #fff;
+	border-radius: 4px;
+}
+main .about .about-skills .container .skills-box:hover .caption {
+	top: -24px;
+	opacity: 1;
+}
+
+
 
 footer {
 }
@@ -375,5 +534,10 @@ footer {
 	
 	main .about .about-personality .container .personality-icons .personality-icon {
 		width: 50%;
+	}
+
+
+	main .about .about-skills .container .skills-box {
+		width: 30%;
 	}
 }
