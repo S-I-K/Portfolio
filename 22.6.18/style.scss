@@ -117,7 +117,7 @@ header{
 /* MAIN */
 main {}
 main section {}
-/* intro */
+/* MAIN intro */
 main .intro-box {
 	display: flex;
 	justify-content: center;
@@ -163,7 +163,7 @@ main .intro-box .intro-textbox p:not(:last-child){
 	line-height: 2.4rem;
 }
 
-/* intro star */
+/* MAIN intro star */
 .star {
 	position: absolute;
 	top: 50%;
@@ -271,7 +271,7 @@ main .intro-box .intro-textbox p:not(:last-child){
 
 
 
-/* about */
+/* MAIN about */
 main .about {
 	height: auto;
 }
@@ -362,7 +362,7 @@ main .about .about-profile {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	background: #4E5689;
+	background: #404972;
 }
 
 main .about .about-profile .container {
@@ -397,7 +397,7 @@ main .about .about-personality {
 	height: auto;
 	display: flex;
 	justify-content: center;
-	background: #efefef;
+	background: #6d74a1;
 }
 main .about .about-personality .container{
 	padding: 40px 0;
@@ -437,7 +437,7 @@ main .about .about-personality .container .personality-icons .personality-icon p
 main .about .about-skills {
 	display: flex;
 	justify-content: center;
-	background: #fff;
+	background: #6d74a1;
 	// height: 50vh;
 }
 main .about .about-skills .container {
@@ -447,7 +447,7 @@ main .about .about-skills .container {
 }
 main .about .about-skills .container .skills-box {
 	width: 18%;
-	border: 1px solid #999;
+	border: 1px solid #ccc;
 	border-radius: 14px;
 	display: flex;
 	flex-direction: column;
@@ -458,7 +458,7 @@ main .about .about-skills .container .skills-box {
 	// transition: box-shadow .2s;
 }
 main .about .about-skills .container .skills-box:hover {
-	box-shadow: 0px 0px 6px 0px;
+	box-shadow: 0px 0px 8px 0px;
 }
 main .about .about-skills .container .skills-box img {
 	width: 40%;
@@ -507,7 +507,13 @@ main .about .about-skills .container .skills-box:hover .caption {
 	opacity: 1;
 }
 
-
+/* MAIN work */
+main .work {
+	background: #fff;
+	display: flex;
+	justify-content: center;
+}
+main .work .container {}
 
 footer {
 }

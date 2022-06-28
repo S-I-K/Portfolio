@@ -133,7 +133,7 @@ section {
 
 /* HEADER */
 /* MAIN */
-/* intro */
+/* MAIN intro */
 main .intro-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -193,7 +193,7 @@ main .intro-box .intro-textbox p:not(:last-child) {
   line-height: 2.4rem;
 }
 
-/* intro star */
+/* MAIN intro star */
 .star {
   position: absolute;
   top: 50%;
@@ -349,7 +349,7 @@ main .intro-box .intro-textbox p:not(:last-child) {
           animation-duration: 2.25s;
 }
 
-/* about */
+/* MAIN about */
 main .about {
   height: auto;
 }
@@ -475,7 +475,7 @@ main .about .about-profile {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  background: #4E5689;
+  background: #404972;
 }
 
 main .about .about-profile .container {
@@ -525,7 +525,7 @@ main .about .about-personality {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #efefef;
+  background: #6d74a1;
 }
 
 main .about .about-personality .container {
@@ -587,7 +587,7 @@ main .about .about-skills {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #fff;
+  background: #6d74a1;
 }
 
 main .about .about-skills .container {
@@ -603,7 +603,7 @@ main .about .about-skills .container {
 
 main .about .about-skills .container .skills-box {
   width: 18%;
-  border: 1px solid #999;
+  border: 1px solid #ccc;
   border-radius: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -621,8 +621,8 @@ main .about .about-skills .container .skills-box {
 }
 
 main .about .about-skills .container .skills-box:hover {
-  -webkit-box-shadow: 0px 0px 6px 0px;
-          box-shadow: 0px 0px 6px 0px;
+  -webkit-box-shadow: 0px 0px 8px 0px;
+          box-shadow: 0px 0px 8px 0px;
 }
 
 main .about .about-skills .container .skills-box img {
@@ -679,6 +679,17 @@ main .about .about-skills .container .skills-box .caption::before {
 main .about .about-skills .container .skills-box:hover .caption {
   top: -24px;
   opacity: 1;
+}
+
+/* MAIN work */
+main .work {
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* 0 - 1220px */
