@@ -1,0 +1,71 @@
+body {
+  overflow-x: hidden;
+}
+
+#wrap {
+  width: 100vw;
+  height: 100vh;
+  background: #444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 60%;
+  height: 90%;
+  background: #222;
+  -webkit-transition: width .6s;
+  transition: width .6s;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+form,
+.greetings {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.clock {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.clock h2 {
+  font-size: 3rem;
+}
+
+img {
+  position: absolute;
+  width: 250px;
+  top: 0;
+  right: -40px;
+}
+
+@media (max-width: 1300px) {
+  .container {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
