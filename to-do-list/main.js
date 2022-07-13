@@ -1,4 +1,4 @@
-/* 시계 */
+/* real-time clock */
 const clock = document.querySelector('.js-clock h1');
 function getTime(){
     const date = new Date();
@@ -8,7 +8,7 @@ function getTime(){
     clock.innerText = `${hours<10?`0${hours}`:`${hours}`}:${minutes<10?`0${minutes}`:`${minutes}`}:${seconds<10?`0${seconds}`:`${seconds}`}`
 }
 
-/* 사용자 이름 확인 */
+/* user name check */
 const nameForm = document.querySelector('.js-nameForm'),
     nameInput = nameForm.querySelector('input'),
     greeting = document.querySelector('.js-greetings'),
@@ -45,16 +45,20 @@ function saveName(name){
     localStorage.setItem(user_ls, name);
 }
 
-/* to-do-list */
+/* to-do-list just add */
 const todoForm = document.querySelector('.js-todoForm'),
     todoInput = todoForm.querySelector('input'),
     todoList = document.querySelector('.js-todolist'),
-    todos_ls = 'todos';
+    todos_ls = 'todos',
+    todosArr = [];
 
 function loadTodos(){
     const todos = localStorage.getItem(todos_ls);
     if(todos !== null){
-        
+        const parsedTodo = JSON.parse(todos);
+        parsedTodo.forEach(function(todo){
+            addTodo(todo.text);
+        });
     }
 }
 
@@ -66,16 +70,32 @@ function todoHandler(event){
 }
 function addTodo(text){
     const li = document.createElement('li');
+    const newId = todosArr.length + 1;
     const span = document.createElement('span');
     span.innerText = text;
     const delBtn = document.createElement('button');
     delBtn.innerText = 'X';
+    li.id = newId;
     li.appendChild(span);
     li.appendChild(delBtn);
     todoList.appendChild(li);
+    const todosObj = {
+        text: text,
+        id: newId
+    };
+    todosArr.push(todosObj);
+    saveTodos();
+}
+function saveTodos(){
+    localStorage.setItem(todos_ls, JSON.stringify(todosArr));
 }
 
-// console.log(todoFo);
+
+
+
+
+
+
 
 
 

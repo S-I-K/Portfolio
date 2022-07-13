@@ -61,6 +61,7 @@ img {
   width: 250px;
   top: 0;
   right: -40px;
+  pointer-events: none;
 }
 
 @media (max-width: 1300px) {
