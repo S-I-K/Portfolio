@@ -49,8 +49,8 @@ function saveName(name){
 const todoForm = document.querySelector('.js-todoForm'),
     todoInput = todoForm.querySelector('input'),
     todoList = document.querySelector('.js-todolist'),
-    todos_ls = 'todos',
-    todosArr = [];
+    todos_ls = 'todos';
+let todosArr = [];
 
 function loadTodos(){
     const todos = localStorage.getItem(todos_ls);
@@ -75,6 +75,7 @@ function addTodo(text){
     span.innerText = text;
     const delBtn = document.createElement('button');
     delBtn.innerText = 'X';
+    delBtn.addEventListener('click', deleteTodo);
     li.id = newId;
     li.appendChild(span);
     li.appendChild(delBtn);
@@ -84,6 +85,17 @@ function addTodo(text){
         id: newId
     };
     todosArr.push(todosObj);
+    saveTodos();
+}
+function deleteTodo(event){
+    const btn = this;
+    const li = btn.parentNode;
+    todoList.removeChild(li);
+    const cleanTodos = todosArr.filter(function(todo){
+        return todo.id !== parseInt(li.id);
+    });
+    console.log(cleanTodos);
+    todosArr = cleanTodos;
     saveTodos();
 }
 function saveTodos(){
