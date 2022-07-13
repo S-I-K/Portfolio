@@ -11,29 +11,9 @@ function getTime(){
 /* 사용자 이름 확인 */
 const nameForm = document.querySelector('.js-nameForm'),
     nameInput = nameForm.querySelector('input'),
-    greeting = document.querySelector('.greetings'),
+    greeting = document.querySelector('.js-greetings'),
     user_ls = 'username',
     show = 'show';
-
-function askforName(){
-    nameForm.classList.add(show);
-    nameForm.addEventListener('submit', handler);
-}
-function handler(event){
-    event.preventDefault();
-    const currentValue = nameInput.value;
-    saveName(currentValue);
-    addName(currentValue);
-}
-function saveName(name){
-    localStorage.setItem(user_ls, name);
-}
-
-function addName(name){
-    nameForm.classList.remove(show);
-    greeting.classList.add(show);
-    greeting.innerText = `왔냐, ${name}`;
-}
 
 function loadName(){
     const currentUser = localStorage.getItem(user_ls);
@@ -42,56 +22,74 @@ function loadName(){
     }else{
         addName(currentUser);
     }
-    console.log(currentUser);
 }
 
+function askforName(){
+    nameForm.classList.add(show);
+    nameForm.addEventListener('submit', handler);
+}
+function handler(event){
+    event.preventDefault();
+    const currentValue = nameInput.value;
+    // console.log(currentValue);
+    addName(currentValue);
+    saveName(currentValue);
+}
+
+function addName(name){
+    nameForm.classList.remove(show);
+    greeting.classList.add(show);
+    greeting.innerText = `왔냐, ${name}`;
+}
+function saveName(name){
+    localStorage.setItem(user_ls, name);
+}
+
+/* to-do-list */
+const todoForm = document.querySelector('.js-todoForm'),
+    todoInput = todoForm.querySelector('input'),
+    todoList = document.querySelector('.js-todolist'),
+    todos_ls = 'todos';
+
+function loadTodos(){
+    const todos = localStorage.getItem(todos_ls);
+    if(todos !== null){
+        
+    }
+}
+
+function todoHandler(event){
+    event.preventDefault();
+    const currentValue = todoInput.value;
+    addTodo(currentValue);
+    todoInput.value = '';
+}
+function addTodo(text){
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.innerText = text;
+    const delBtn = document.createElement('button');
+    delBtn.innerText = 'X';
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    todoList.appendChild(li);
+}
+
+// console.log(todoFo);
 
 
 
 
 
-
-// const user_ls = 'currentUser',
-//     show = 'show',
-//     nameForm = document.querySelector('.js-nameForm'),
-//     nameInput = nameForm.querySelector('input'),
-//     greeting = document.querySelector('.js-greetings');
-
-// function saveName(text){
-//     localStorage.setItem(user_ls, text);
-// }
-
-// function askforName(){
-//     nameForm.classList.add(show);
-//     nameForm.addEventListener('submit', handler);
-// }
-
-// function handler(event){
-//     event.preventDefault();
-//     const currentValue = nameInput.value;
-//     addName(currentValue);
-//     saveName(currentValue);
-// }
-
-// function addName(text){
-//     nameForm.classList.remove(show);
-//     greeting.classList.add(show);
-//     greeting.innerText = `왔냐, ${text}`;
-// }
-
-// function loadName(){
-//     const currentUser = localStorage.getItem(user_ls);
-//     if(currentUser === null){
-//         askforName();
-//     }else{
-//         addName(currentUser);
-//     }
-// }
 
 function init(){
+    /* clock */
     getTime();
     setInterval(getTime,1000);
-
+    /* user name */
     loadName();
+    /* to-do-list */
+    loadTodos();
+    todoForm.addEventListener('submit', todoHandler);
 }
 init();
