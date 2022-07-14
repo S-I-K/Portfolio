@@ -74,7 +74,7 @@ function addTodo(text){
     const span = document.createElement('span');
     span.innerText = text;
     const delBtn = document.createElement('button');
-    delBtn.innerText = 'X';
+    delBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     delBtn.addEventListener('click', deleteTodo);
     li.id = newId;
     li.appendChild(span);
@@ -101,18 +101,6 @@ function deleteTodo(event){
 function saveTodos(){
     localStorage.setItem(todos_ls, JSON.stringify(todosArr));
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 function init(){
     /* clock */
