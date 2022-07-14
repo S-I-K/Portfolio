@@ -65,7 +65,9 @@ function loadTodos(){
 function todoHandler(event){
     event.preventDefault();
     const currentValue = todoInput.value;
+    if(currentValue!==''){
     addTodo(currentValue);
+    }
     todoInput.value = '';
 }
 function addTodo(text){
