@@ -90,6 +90,7 @@ function addTodo(text){
     saveTodos();
 }
 function deleteTodo(event){
+    event.preventDefault();
     const btn = this;
     const li = btn.parentNode;
     todoList.removeChild(li);

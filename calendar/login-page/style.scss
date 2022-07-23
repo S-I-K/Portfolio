@@ -1,0 +1,119 @@
+/*
+font-family: 'IBM Plex Sans KR', sans-serif;
+font-family: 'Montserrat', sans-serif;
+*/
+* {
+    box-sizing: border-box;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/login-bg.jpeg) no-repeat bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-form {
+    // background: rgba(0,0,0,0.4);
+}
+.login-form h1 {
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.login-form form{
+    width: 100%;
+}
+.login-form form .input-area{
+    width: 400px;
+    position: relative;
+}
+.login-form form .input-area:not(:first-child){
+    margin-top: 20px;
+}
+.login-form form .input-area input{
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+}
+.login-form form .input-area label{
+    position: absolute;
+    left: 10px; top: 20px;
+    font-size: 18px;
+    color: #999;
+    transition: all .6s ease;
+}
+.login-form form .input-area :focus + label,
+.login-form form .input-area :valid + label{
+    top: -2px;
+    font-size: 13px;
+    color: #80d6ff;
+}
+.login-form form .input-area label.warning{
+    color: #ff5a4b;
+    animation: warning .3s ease;
+    animation-iteration-count: 3;
+}
+@keyframes warning {
+    0% {
+        transform: translateX(-6px);
+    }
+    25% {
+        transform: translateX(6px);
+    }
+    50% {
+        transform: translateX(-6px);
+    }
+    75% {
+        transform: translateX(6px);
+    }
+}
+.login-form form .btn-area{
+    margin-top: 30px;
+}
+.login-form form .btn-area:last-child{
+    margin-top: 20px;
+}
+.login-form form .btn-area button,
+.login-form form .btn-area a{
+    width: 100%;
+    height: 50px;
+    background: #0077c2;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all .6s ease;
+}
+.login-form form .btn-area button:hover,
+.login-form form .btn-area a:hover{
+    background: #80d6ff;
+}
+.login-form form .btn-area a {
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+}
+.login-form .caption{
+    margin-top: 20px;
+    text-align: center;
+}
+.login-form .caption a{
+    text-decoration: none;
+    font-size: 15px;
+    color:#999;
+    transition: color .6s ease;
+}
+.login-form .caption a:hover{
+    color: #fff;
+}
