@@ -39,7 +39,7 @@ font-family: 'Montserrat', sans-serif;
     padding: 20px 10px 10px;
     background: transparent;
     border: none;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #ccc;
     font-size: 18px;
     color: #fff;
     outline: none;
@@ -48,7 +48,7 @@ font-family: 'Montserrat', sans-serif;
     position: absolute;
     left: 10px; top: 20px;
     font-size: 18px;
-    color: #999;
+    color: #ccc;
     transition: all .6s ease;
 }
 .login-form form .input-area :focus + label,
@@ -115,5 +115,5 @@ font-family: 'Montserrat', sans-serif;
     transition: color .6s ease;
 }
 .login-form .caption a:hover{
-    color: #fff;
+    color: #ccc;
 }

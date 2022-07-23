@@ -48,7 +48,7 @@ font-family: 'Montserrat', sans-serif;
   padding: 20px 10px 10px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #ccc;
   font-size: 18px;
   color: #fff;
   outline: none;
@@ -59,7 +59,7 @@ font-family: 'Montserrat', sans-serif;
   left: 10px;
   top: 20px;
   font-size: 18px;
-  color: #999;
+  color: #ccc;
   -webkit-transition: all .6s ease;
   transition: all .6s ease;
 }
@@ -165,6 +165,6 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .login-form .caption a:hover {
-  color: #fff;
+  color: #ccc;
 }
 /*# sourceMappingURL=style.css.map */

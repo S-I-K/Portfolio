@@ -1,1 +1,141 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+/*
+font-family: 'IBM Plex Sans KR', sans-serif;
+font-family: 'Montserrat', sans-serif;
+*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#wrap {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background: url(../img/login-bg.jpeg) no-repeat bottom;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sign-form h1 {
+  font-size: 32px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sign-form form .input-area label.warning {
+  color: #ff5a4b !important;
+  -webkit-animation: warning .3s ease;
+          animation: warning .3s ease;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+
+@-webkit-keyframes warning {
+  0% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  25% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  75% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+}
+
+@keyframes warning {
+  0% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  25% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  75% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+}
+
+.sign-form form .input-area {
+  width: 400px;
+  position: relative;
+}
+
+.sign-form form .input-area:not(:first-child) {
+  margin-top: 20px;
+}
+
+.sign-form form .input-area input {
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
+  color: #fff;
+  outline: none;
+}
+
+.sign-form form .input-area label {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  font-size: 18px;
+  color: #ccc;
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.sign-form form .input-area :focus + label,
+.sign-form form .input-area :valid + label {
+  top: -2px;
+  font-size: 13px;
+  color: #80d6ff;
+}
+
+.sign-form form .btn-area button {
+  width: 100%;
+  height: 50px;
+  background: #0077c2;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+  margin-top: 20px;
+}
+
+.sign-form form .btn-area button:hover,
+.sign-form form .btn-area a:hover {
+  background: #80d6ff;
+}
+
+.sign-form form .btn-area a {
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
